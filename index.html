@@ -4,9 +4,33 @@
 <head>
   <meta charset="UTF-8">
   <title>Reggie Sanchez – Resume</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Live cloud-hosted resume for Reggie Sanchez — built with AWS, Terraform, and dark mode themes.">
+
+<!-- Social Sharing Tags -->
+  <meta property="og:title" content="Reggie Sanchez – Cloud Resume">
+  <meta property="og:description" content="A cloud-powered resume hosted on AWS with dark mode, QR access, and live visitor tracking.">
+  <meta property="og:image" content="https://resume.whoisreggiesanchez.com/preview.png"> <!-- replace with real image -->
+  <meta property="og:url" content="https://resume.whoisreggiesanchez.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
+<style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow-x: hidden;
+      background-color: #f9f9f9; /* fallback light */
+      color: #333;
+    }
+
+
     body {
       font-family: Arial, sans-serif;
       background-color: #f9f9f9;
@@ -15,10 +39,11 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      margin: 0;
       padding: 20px;
       text-align: center;
+      min-height: 100%;
+      height: auto;
+      overflow-x: hidden;
     }
 
     h1 {
@@ -48,51 +73,296 @@
       margin-right: 8px;
     }
 
+    .resume-button {
+      display: inline-block;
+      margin: 20px auto;
+      padding: 12px 24px;
+      background-color: #39FF14;
+      color: #111;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 1.1rem;
+      text-decoration: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(57, 255, 20, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .resume-button:hover {
+      background-color: #32e300;
+      box-shadow: 0 6px 18px rgba(50, 227, 0, 0.4);
+      transform: scale(1.03);
+    }
+
+
     @media screen and (max-width: 600px) {
       h1 { font-size: 1.8rem; }
       p { font-size: 1rem; }
       .links a { font-size: 1rem; margin: 8px; }
     }
+
+    #visitor-badge {
+      background-color: #39FF14;
+      color: #111;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(57, 255, 20, 0.2);
+    }
+
+
+    #visitor-badge {
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    #visitor-badge:hover::after {
+      content: 'Powered by AWS Lambda + DynamoDB';
+      position: absolute;
+      bottom: 110%;
+      right: 0;
+      background-color: #111;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 6px;
+      white-space: nowrap;
+      font-size: 0.75rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media screen and (max-width: 600px) and (orientation: portrait) {
+    .mobile-buttons {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 10px 0;
+      background: rgba(255, 255, 255, 0.95);
+      text-align: center;
+      z-index: 9998;
+      box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
+    }
+
+    .mobile-buttons .resume-button {
+      margin-bottom: 14px;
+    }
+
+    .mobile-buttons a {
+      display: inline-block;
+      margin: 0 12px;
+    }
+
+    html.dark .mobile-buttons {
+      background: rgba(18, 18, 18, 0.95);
+    }
+}
+
+    @media screen and (max-width: 600px) {
+    #visitor-badge {
+      top: 1rem !important;
+      bottom: auto !important;
+      right: 1rem !important;
+      left: auto !important;
+      transform: none !important;
+      max-width: 85vw;
+      white-space: nowrap;
+    }
+
+    }
+    html.dark, html.dark body {
+      background-color: #121212;
+      color: #f1f1f1;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    html.dark .links a {
+      color: #90cdf4;
+    }
+
+    html.dark .links a:hover {
+      color: #63b3ed;
+    }
+
+/* Fallback / Default Neon Turquoise Theme */
+    html.dark .resume-button,
+    html.dark #visitor-badge {
+      background-color: #00ffc3;
+      color: #111;
+      font-weight: bold;
+      text-shadow: 0 0 2px #fff;
+      box-shadow: 0 0 15px rgba(0, 255, 195, 0.75);
+      transition: all 0.3s ease-in-out;
+    }
+
+    html.dark .resume-button:hover {
+      background-color: #00e0ac;
+      box-shadow: 0 0 20px rgba(0, 255, 195, 1);
+      transform: scale(1.05);
+    }
+
+/* Variant: Matrix Green */
+    html.dark.theme-matrix .resume-button,
+    html.dark.theme-matrix #visitor-badge {
+      background-color: #39FF14;
+      color: #000;
+      box-shadow: 0 0 15px rgba(57, 255, 20, 0.75);
+    }
+
+/* Variant: Vaporwave Pink */
+    html.dark.theme-vaporwave .resume-button,
+    html.dark.theme-vaporwave #visitor-badge {
+      background-color: #ff71ce;
+      color: #000;
+      box-shadow: 0 0 15px rgba(255, 113, 206, 0.8);
+    }
+
+/* Variant: Synthwave Purple */
+    html.dark.theme-synthwave .resume-button,
+    html.dark.theme-synthwave #visitor-badge {
+      background-color: #c084fc;
+      color: #000;
+      box-shadow: 0 0 15px rgba(192, 132, 252, 0.8);
+    }
+
+/* Variant: Tron Blue */
+    html.dark.theme-tron .resume-button,
+    html.dark.theme-tron #visitor-badge {
+      background-color: #00ffff;
+      color: #000;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.9);
+    }
+
+    /* Variant: Inferno Red */
+    html.dark.theme-inferno .resume-button,
+    html.dark.theme-inferno #visitor-badge {
+      background-color: #ff4c4c;
+      color: #000;
+      box-shadow: 0 0 15px rgba(255, 76, 76, 0.9);
+    }
+
   </style>
 </head>
 <body>
   <h1>Something Is Cooking Right Now! Please Be Patient</h1>
   <p>This is Reggie’s live resume hosted on AWS 🚀</p>
 
-  <!-- Download Resume Button -->
-  <div class="links">
-    <a
-      href="/resume.pdf"
-      download
-      target="_blank"
-      rel="noopener"
-      style="
-        display: inline-block;
-        margin: 20px auto;
-        padding: 12px 24px;
-        background-color: #2563eb;
-        color: white;
-        font-weight: bold;
-        text-decoration: none;
-        border-radius: 12px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        transition: background-color 0.3s ease;"
-      onmouseover="this.style.backgroundColor='#1e40af'"
-      onmouseout="this.style.backgroundColor='#2563eb'"
-    >
-      📄 Download Resume
-    </a>
-  </div>
+<!-- Download Resume Button -->
+<!-- 🔽 Anchored Mobile Button Container -->
+<div class="mobile-buttons">
+  <a
+    href="/resume.pdf"
+    download
+    target="_blank"
+    rel="noopener"
+    class="resume-button"
+  >
+    📄 Download Resume
+  </a>
 
-  <!-- Social Links -->
-  <div class="links">
-    <a href="https://github.com/ReggieSanchez" target="_blank">
-      <i class="fab fa-github"></i>GitHub
-    </a>
-    <a href="https://www.linkedin.com/in/reggiesanchez" target="_blank">
-      <i class="fab fa-linkedin"></i>LinkedIn
-    </a>
+<!-- Social Links -->
+<div class="links">
+  <a href="https://github.com/ReggieSanchez" target="_blank" aria-label="Visit Reggie's GitHub Profile">
+    <i class="fab fa-github"></i> GitHub
+  </a>
+  <a href="https://www.linkedin.com/in/reggiesanchez" target="_blank" aria-label="Visit Reggie's LinkedIn Profile">
+    <i class="fab fa-linkedin"></i> LinkedIn
+  </a>
+  </div>
+</div>
+
+<!-- Theme Toggle -->
+<button id="theme-toggle" type="button" aria-label="Toggle dark mode" style="
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #e2e8f0;
+    color: #111;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    max-width: 90vw;
+    white-space: nowrap;
+  ">
+  🌙 Dark Mode
+</button>
+
+<!-- Visitor Counter Badge -->
+  <div id="visitor-badge" style="
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    font-weight: bold;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    z-index: 9999;
+    font-family: Arial, sans-serif;
+    cursor: default;
+    animation: fadeIn 0.8s ease-in-out;
+    max-width: 90vw;
+    white-space: nowrap;
+    ">
+    👀 Views: <span id="visit-count">...</span>
   </div>
 </body>
+
+<script>
+  const html = document.documentElement;
+  const toggleButton = document.getElementById("theme-toggle");
+
+  const themes = ["matrix", "vaporwave", "synthwave", "tron", "inferno"];
+
+  const storedTheme = localStorage.getItem("theme");
+  const storedVariant = localStorage.getItem("variant");
+
+  if (storedTheme === "dark") {
+    html.classList.add("dark");
+    if (themes.includes(storedVariant)) {
+      html.classList.add(`theme-${storedVariant}`);
+    }
+  }
+
+  toggleButton.addEventListener("click", () => {
+    const isDark = html.classList.toggle("dark");
+
+    if (isDark) {
+      const variant = themes[Math.floor(Math.random() * themes.length)];
+      themes.forEach(t => html.classList.remove(`theme-${t}`));
+      html.classList.add(`theme-${variant}`);
+      localStorage.setItem("theme", "dark");
+      localStorage.setItem("variant", variant);
+      toggleButton.textContent = "☀️ Light Mode";
+    } else {
+      themes.forEach(t => html.classList.remove(`theme-${t}`));
+      html.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+      localStorage.removeItem("variant");
+      toggleButton.textContent = "🌙 Dark Mode";
+    }
+  });
+
+  toggleButton.textContent = html.classList.contains("dark") ? "☀️ Light Mode" : "🌙 Dark Mode";
+
+  // Visitor tracker fix
+  fetch("https://o53au94nw7.execute-api.us-west-2.amazonaws.com/prod/site-visit")
+    .then(res => res.json())
+    .then(data => {
+      console.log("Visitor count received:", data);
+      document.getElementById("visit-count").textContent = data.count;
+    })
+    .catch(err => {
+      console.error("Error fetching visit count:", err);
+      document.getElementById("visit-count").textContent = "??";
+    });
+</script>
+
 
 

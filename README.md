@@ -9,19 +9,19 @@
 
 ## 🧠 Why I Built This
 
-I wanted to challenge myself and create something that goes beyond the typical resume — something **cloud-native**, **production-grade**, and **developer-forward**. This project allowed me to showcase real-world skills like infrastructure as code, cloud automation, and polished front-end delivery — all backed by AWS.
+I wanted to challenge myself and create something that goes beyond the typical resume — something cloud-native, production-grade, and developer-forward. This project allowed me to showcase real-world skills like infrastructure as code, cloud automation, and polished front-end delivery — all backed by AWS.
 
 ---
 
 ## 🛠️ Technologies Used
 
-| Category       | Tools / Services                               |
-|----------------|------------------------------------------------|
-| **Frontend**   | HTML, CSS, favicon                             |
-| **Cloud**      | AWS S3, CloudFront, Route 53, ACM              |
-| **IaC**        | Terraform                                      |
-| **Deployment** | AWS CLI, GitHub                                |
-| **Extras**     | QR code for mobile access, downloadable resume |
+| Category       | Tools / Services                                               |
+|----------------|----------------------------------------------------------------|
+| **Frontend**   | HTML, CSS, Responsive Design, Rotating Dark Mode Themes, favicon |
+| **Cloud**      | AWS S3, CloudFront, Route 53, ACM, Lambda, DynamoDB            |
+| **IaC**        | Terraform                                                      |
+| **Deployment** | AWS CLI, GitHub                                                |
+| **Extras**     | Custom domain, downloadable resume, QR code, visitor counter   |
 
 ---
 
@@ -30,23 +30,28 @@ I wanted to challenge myself and create something that goes beyond the typical r
 - Fully static website hosted on S3
 - Enforced HTTPS via CloudFront + ACM
 - Custom domain with Route 53
-- Clean UI and mobile-responsive layout
-- Clickable download button for `resume.pdf`
-- QR code embedded into physical/digital resume
-- Version controlled via GitHub
+- Infrastructure provisioned using Terraform
+- Version-controlled using Git + GitHub
+- Mobile-responsive layout with anchored buttons
+- Resume download button (`resume.pdf`)
+- QR code for easy access on physical resumes
+- Rotating dark mode themes (Matrix, Vaporwave, Tron, Inferno, etc.)
+- Visitor counter powered by Lambda + DynamoDB
+- CloudFront cache invalidation for instant updates
 
 ---
 
 ## 🔭 Future Plans
 
-- [ ] Add GitHub Actions for CI/CD deployment
-- [ ] Integrate Lambda + DynamoDB visitor analytics
-- [ ] Add dark mode support
-- [ ] Implement Content Security Policy (CSP) headers
+- Add GitHub Actions for CI/CD pipeline  
+- Harden security headers (Content Security Policy via CloudFront)  
+- Add PDF preview on hover  
+- Create a project showcase section  
+- Implement SEO/meta tag optimization  
 
 ---
 
 ## 📬 Contact Me
 
-- [LinkedIn](https://www.linkedin.com/in/reggiesanchez)
+- [LinkedIn](https://www.linkedin.com/in/reggiesanchez)  
 - [GitHub](https://github.com/ReggieSanchez)

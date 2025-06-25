@@ -150,9 +150,15 @@
       margin-bottom: 14px;
     }
 
-    .mobile-buttons a {
+    .mobile-buttons > a {
       display: inline-block;
-      margin: 0 12px;
+      margin-bottom: 14px;
+    }
+
+    .social-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
     }
 
     html.dark .mobile-buttons {
@@ -243,14 +249,23 @@
       box-shadow: 0 0 15px rgba(255, 76, 76, 0.9);
     }
 
+  html.dark .social-buttons {
+    background: rgba(18, 18, 18, 0.95);
+  }
+
+  body {
+    padding-bottom: 100px; /* ensures no content gets hidden behind fixed bar */
+  }
+
   </style>
 </head>
 <body>
   <h1>Something Is Cooking Right Now! Please Be Patient</h1>
   <p>This is Reggie’s live resume hosted on AWS 🚀</p>
 
-<!-- ✅ Resume Button Row (Anchored) -->
+<!-- 🔽 Anchored Mobile Button Container -->
 <div class="mobile-buttons">
+  <!-- Resume Button -->
   <a
     href="/resume.pdf"
     download
@@ -260,36 +275,37 @@
   >
     📄 Download Resume
   </a>
-</div>
 
-<!-- ✅ Independent Social Icons Row -->
-<div class="flex justify-center gap-6 mt-4 mb-6">
-  <!-- GitHub -->
-  <div class="relative group w-14 h-14">
-    <a href="https://github.com/ReggieSanchez" target="_blank" rel="noopener noreferrer"
-       aria-label="Visit Reggie's GitHub Profile"
-       class="flex items-center justify-center w-full h-full rounded-full bg-white dark:bg-black text-black dark:text-white
-              transition-transform duration-300 transform group-hover:scale-110 group-hover:shadow-[0_0_10px_2px_rgba(0,255,150,0.8)]">
-      <i class="fab fa-github fa-2x"></i>
-    </a>
-    <span class="absolute -top-1.5 -right-1.5 bg-green-500 text-white text-[11px] font-bold rounded-full px-1 py-[1px] 
-                 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-md">
-      ✓
-    </span>
-  </div>
+  <!-- Social Icons: horizontal and large -->
+  <div class="social-buttons flex flex-row justify-center items-center gap-6 mt-3">
 
-  <!-- LinkedIn -->
-  <div class="relative group w-14 h-14">
-    <a href="https://www.linkedin.com/in/reggiesanchez" target="_blank" rel="noopener noreferrer"
-       aria-label="Visit Reggie's LinkedIn Profile"
-       class="flex items-center justify-center w-full h-full rounded-full bg-white dark:bg-black text-blue-700 dark:text-white
-              transition-transform duration-300 transform group-hover:scale-110 group-hover:shadow-[0_0_10px_2px_rgba(14,118,168,0.8)]">
-      <i class="fab fa-linkedin fa-2x"></i>
-    </a>
-    <span class="absolute -top-1.5 -right-1.5 bg-blue-500 text-white text-[11px] font-bold rounded-full px-1 py-[1px] 
-                 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-md">
-      ✓
-    </span>
+    <!-- GitHub -->
+    <div class="relative group w-14 h-14">
+      <a href="https://github.com/ReggieSanchez" target="_blank" rel="noopener noreferrer"
+         aria-label="Visit Reggie's GitHub Profile"
+         class="flex items-center justify-center w-full h-full rounded-full bg-white dark:bg-black text-black dark:text-white
+                transition-transform duration-300 transform group-hover:scale-110 group-hover:shadow-[0_0_10px_2px_rgba(0,255,150,0.8)]">
+        <i class="fab fa-github fa-2x"></i>
+      </a>
+      <span class="absolute -top-1.5 -right-1.5 bg-green-500 text-white text-[11px] font-bold rounded-full px-1 py-[1px] 
+                   opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-md">
+        ✓
+      </span>
+    </div>
+
+    <!-- LinkedIn -->
+    <div class="relative group w-14 h-14">
+      <a href="https://www.linkedin.com/in/reggiesanchez" target="_blank" rel="noopener noreferrer"
+         aria-label="Visit Reggie's LinkedIn Profile"
+         class="flex items-center justify-center w-full h-full rounded-full bg-white dark:bg-black text-blue-700 dark:text-white
+                transition-transform duration-300 transform group-hover:scale-110 group-hover:shadow-[0_0_10px_2px_rgba(14,118,168,0.8)]">
+        <i class="fab fa-linkedin fa-2x"></i>
+      </a>
+      <span class="absolute -top-1.5 -right-1.5 bg-blue-500 text-white text-[11px] font-bold rounded-full px-1 py-[1px] 
+                   opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-md">
+        ✓
+      </span>
+    </div>
   </div>
 </div>
 

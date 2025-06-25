@@ -272,9 +272,11 @@
     target="_blank"
     rel="noopener"
     class="resume-button"
+    onclick="notifyDownload()"
   >
     📄 Download Resume
   </a>
+
 
   <!-- Social Links -->
   <div class="links">
@@ -326,6 +328,17 @@
     ">
     👀 Views: <span id="visit-count">...</span>
   </div>
+
+<script>
+  function notifyDownload() {
+    fetch("https://u9i4ezg7d4.execute-api.us-west-2.amazonaws.com/prod/resume-download", {
+      method: "POST"
+    })
+    .then(response => console.log("✅ Resume download tracked"))
+    .catch(error => console.error("❌ Tracking failed", error));
+  }
+</script>
+
 </body>
 
 <script>

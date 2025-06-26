@@ -41,6 +41,7 @@
       align-items: center;
       justify-content: center;
       padding: 20px;
+      padding-bottom: 100px;
       text-align: center;
       min-height: 100%;
       height: auto;
@@ -96,6 +97,70 @@
       transform: scale(1.03);
     }
 
+.hero {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+}
+
+.subheadline {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.soft-skills-line {
+  font-size: 1rem;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+.soft-skills-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.soft-skills-list li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.soft-skills-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.45rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--bullet-color, #00ffc3);
+  box-shadow: 0 0 6px var(--bullet-color, #00ffc3);
+}
+
+.soft-skills-list span {
+  font-weight: bold;
+}
+
+.highlight {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 2.5rem;
+  margin-bottom: 0.5rem;
+}
 
     @media screen and (max-width: 600px) {
       h1 { font-size: 1.8rem; }
@@ -253,15 +318,87 @@
     background: rgba(18, 18, 18, 0.95);
   }
 
-  body {
-    padding-bottom: 100px; /* ensures no content gets hidden behind fixed bar */
-  }
 
-  </style>
+/* Dark mode variant bullet colors */
+html.dark.theme-matrix .soft-skills li::before {
+  background-color: #39FF14;
+  box-shadow: 0 0 8px rgba(57, 255, 20, 0.8);
+}
+html.dark.theme-vaporwave .soft-skills li::before {
+  background-color: #ff71ce;
+  box-shadow: 0 0 8px rgba(255, 113, 206, 0.8);
+}
+html.dark.theme-synthwave .soft-skills li::before {
+  background-color: #c084fc;
+  box-shadow: 0 0 8px rgba(192, 132, 252, 0.8);
+}
+html.dark.theme-tron .soft-skills li::before {
+  background-color: #00ffff;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.9);
+}
+html.dark.theme-inferno .soft-skills li::before {
+  background-color: #ff4c4c;
+  box-shadow: 0 0 8px rgba(255, 76, 76, 0.9);
+}
+
+.highlight {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+html.dark .soft-skills-line,
+html.dark .subheadline,
+html.dark .highlight {
+  color: #e0e0e0;
+}
+
+html.dark.theme-matrix {
+  --bullet-color: #39FF14;
+}
+html.dark.theme-vaporwave {
+  --bullet-color: #ff71ce;
+}
+html.dark.theme-synthwave {
+  --bullet-color: #c084fc;
+}
+html.dark.theme-tron {
+  --bullet-color: #00ffff;
+}
+html.dark.theme-inferno {
+  --bullet-color: #ff4c4c;
+}
+</style>
 </head>
 <body>
-  <h1>Something Is Cooking Right Now! Please Be Patient</h1>
-  <p>This is Reggie’s live resume hosted on AWS 🚀</p>
+
+<section class="hero">
+  <h1>Your Next Cloud Engineer? You're Already On My Server.</h1>
+
+  <p class="subheadline">
+    This resume is more than a PDF — it's powered by <strong>AWS, Terraform,</strong> and <strong>GitHub Actions</strong>.<br>
+    Hosted on the cloud. Built to impress.
+  </p>
+
+  <p class="soft-skills-line">
+    I'm proud of how far I've come — and even more excited about where I'm going. Focused, humble, and driven to grow.
+  </p>
+
+  <ul class="soft-skills-list">
+    <li><span>Clear communicator</span> who values honesty</li>
+    <li><span>Disciplined, dependable,</span> and proactive</li>
+    <li><span>Family-oriented</span> and grounded</li>
+    <li><span>Quick learner</span> who’s not afraid to ask questions</li>
+    <li><span>Humble about the present,</span> excited for the future</li>
+    <li><span>Grateful for every step,</span> hungry for the next challenge</li>
+  </ul>
+
+  <p class="highlight">
+    📄 Download below — or explore the stack behind this site.
+  </p>
+</section>
+
 
 <!-- Download Resume Button -->
 <!-- 🔽 Anchored Mobile Button Container -->

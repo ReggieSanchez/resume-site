@@ -1,0 +1,390 @@
+  *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow-x: hidden;
+      background-color: #f9f9f9; /* fallback light */
+      color: #333;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      padding-bottom: 100px;
+      text-align: center;
+      min-height: 100%;
+      height: auto;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 2rem;
+      font-size: 1.2rem;
+    }
+
+    .links a {
+      display: inline-block;
+      margin: 10px 20px;
+      font-size: 1.2rem;
+      text-decoration: none;
+      color: #0073e6;
+      transition: color 0.3s;
+    }
+
+    .links a:hover {
+      color: #005bb5;
+    }
+
+    .links i {
+      margin-right: 8px;
+    }
+
+    .resume-button {
+      display: inline-block;
+      margin: 20px auto;
+      padding: 12px 24px;
+      background-color: #39FF14;
+      color: #111;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 1.1rem;
+      text-decoration: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(57, 255, 20, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .resume-button:hover {
+      background-color: #32e300;
+      box-shadow: 0 6px 18px rgba(50, 227, 0, 0.4);
+      transform: scale(1.03);
+    }
+
+.hero {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+}
+
+.subheadline {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.soft-skills-line {
+  font-size: 1rem;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+.soft-skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 2rem auto;
+  font-size: 1.1rem;
+  max-width: 600px;
+  text-align: left;
+  display: table;
+}
+
+.soft-skills-list li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.soft-skills-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.45rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--bullet-color, #00ffc3);
+  box-shadow: 0 0 6px var(--bullet-color, #00ffc3);
+}
+
+.soft-skills-list span {
+  font-weight: bold;
+}
+
+.highlight {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .hero h1 {
+    font-size: 1.2rem;
+    line-height: 1.0;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .links a {
+    font-size: 1rem;
+    margin: 8px;
+  }
+}
+
+    #visitor-badge {
+      background-color: #39FF14;
+      color: #111;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(57, 255, 20, 0.2);
+    }
+
+    #visitor-badge {
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    #visitor-badge:hover::after {
+      content: 'Powered by AWS Lambda + DynamoDB';
+      position: absolute;
+      bottom: 110%;
+      right: 0;
+      background-color: #111;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 6px;
+      white-space: nowrap;
+      font-size: 0.75rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media screen and (max-width: 600px) and (orientation: portrait) {
+    .mobile-buttons {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 10px 0;
+      background: rgba(255, 255, 255, 0.95);
+      text-align: center;
+      z-index: 9998;
+      box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
+    }
+
+    .mobile-buttons .resume-button {
+      margin-bottom: 14px;
+    }
+
+    .mobile-buttons > a {
+      display: inline-block;
+      margin-bottom: 14px;
+    }
+
+    .social-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    html.dark .mobile-buttons {
+      background: rgba(18, 18, 18, 0.95);
+    }
+}
+
+    @media screen and (max-width: 600px) {
+    #visitor-badge {
+      top: 1rem !important;
+      bottom: auto !important;
+      right: 1rem !important;
+      left: auto !important;
+      transform: none !important;
+      max-width: 85vw;
+      white-space: nowrap;
+    }
+
+    @media screen and (max-width: 600px) {
+    .highlight {
+      display: none;
+    }
+}
+
+    }
+    html.dark, html.dark body {
+      background-color: #121212;
+      color: #f1f1f1;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    html.dark .links a {
+      color: #90cdf4;
+    }
+
+    html.dark .links a:hover {
+      color: #63b3ed;
+    }
+
+/* Fallback / Default Neon Turquoise Theme */
+    html.dark .resume-button,
+    html.dark #visitor-badge {
+      background-color: #00ffc3;
+      color: #111;
+      font-weight: bold;
+      text-shadow: 0 0 2px #fff;
+      box-shadow: 0 0 15px rgba(0, 255, 195, 0.75);
+      transition: all 0.3s ease-in-out;
+    }
+
+    html.dark .resume-button:hover {
+      background-color: #00e0ac;
+      box-shadow: 0 0 20px rgba(0, 255, 195, 1);
+      transform: scale(1.05);
+    }
+
+/* Variant: Matrix Green */
+    html.dark.theme-matrix .resume-button,
+    html.dark.theme-matrix #visitor-badge {
+      background-color: #39FF14;
+      color: #000;
+      box-shadow: 0 0 15px rgba(57, 255, 20, 0.75);
+    }
+
+/* Variant: Vaporwave Pink */
+    html.dark.theme-vaporwave .resume-button,
+    html.dark.theme-vaporwave #visitor-badge {
+      background-color: #ff71ce;
+      color: #000;
+      box-shadow: 0 0 15px rgba(255, 113, 206, 0.8);
+    }
+
+/* Variant: Synthwave Purple */
+    html.dark.theme-synthwave .resume-button,
+    html.dark.theme-synthwave #visitor-badge {
+      background-color: #c084fc;
+      color: #000;
+      box-shadow: 0 0 15px rgba(192, 132, 252, 0.8);
+    }
+
+/* Variant: Tron Blue */
+    html.dark.theme-tron .resume-button,
+    html.dark.theme-tron #visitor-badge {
+      background-color: #00ffff;
+      color: #000;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.9);
+    }
+
+/* Variant: Inferno Red */
+    html.dark.theme-inferno .resume-button,
+    html.dark.theme-inferno #visitor-badge {
+      background-color: #ff4c4c;
+      color: #000;
+      box-shadow: 0 0 15px rgba(255, 76, 76, 0.9);
+    }
+
+  html.dark .social-buttons {
+    background: rgba(18, 18, 18, 0.95);
+  }
+
+
+/* Dark mode variant bullet colors */
+html.dark.theme-matrix .soft-skills li::before {
+  background-color: #39FF14;
+  box-shadow: 0 0 8px rgba(57, 255, 20, 0.8);
+}
+html.dark.theme-vaporwave .soft-skills li::before {
+  background-color: #ff71ce;
+  box-shadow: 0 0 8px rgba(255, 113, 206, 0.8);
+}
+html.dark.theme-synthwave .soft-skills li::before {
+  background-color: #c084fc;
+  box-shadow: 0 0 8px rgba(192, 132, 252, 0.8);
+}
+html.dark.theme-tron .soft-skills li::before {
+  background-color: #00ffff;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.9);
+}
+html.dark.theme-inferno .soft-skills li::before {
+  background-color: #ff4c4c;
+  box-shadow: 0 0 8px rgba(255, 76, 76, 0.9);
+}
+
+.highlight {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+html.dark .soft-skills-line,
+html.dark .subheadline,
+html.dark .highlight {
+  color: #e0e0e0;
+}
+
+html.dark.theme-matrix {
+  --bullet-color: #39FF14;
+}
+html.dark.theme-vaporwave {
+  --bullet-color: #ff71ce;
+}
+html.dark.theme-synthwave {
+  --bullet-color: #c084fc;
+}
+html.dark.theme-tron {
+  --bullet-color: #00ffff;
+}
+html.dark.theme-inferno {
+  --bullet-color: #ff4c4c;
+}
+
+body {
+  background:
+    radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0) 70%),
+    url('../assets/circuit-mesh.svg') center center / cover no-repeat;
+  transition: background-color 0.4s ease, color 0.4s ease, background 1.0s ease;
+}
+
+html.dark body {
+  background:
+    radial-gradient(circle, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0) 70%),
+    url('../assets/circuit-mesh.svg') center center / cover no-repeat;
+  transition: background-color 0.8s ease, color 0.8s ease, background 0.8s ease;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.6);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  z-index: -1; /* stays behind your content */
+}
+
+/* When dark mode is active */
+html.dark body::before {
+  opacity: 1;
+}

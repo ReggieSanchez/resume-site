@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid slice">
+  <g fill="none" stroke="#00ffc3" stroke-width="0.5">
+    <!-- Vertical lines -->
+    <path d="M50 0v800" />
+    <path d="M150 0v800" />
+    <path d="M250 0v800" />
+    <path d="M350 0v800" />
+    <path d="M450 0v800" />
+    <path d="M550 0v800" />
+    <path d="M650 0v800" />
+    <path d="M750 0v800" />
+
+    <!-- Horizontal lines -->
+    <path d="M0 50h800" />
+    <path d="M0 150h800" />
+    <path d="M0 250h800" />
+    <path d="M0 350h800" />
+    <path d="M0 450h800" />
+    <path d="M0 550h800" />
+    <path d="M0 650h800" />
+    <path d="M0 750h800" />
+
+    <!-- Pads -->
+    <circle cx="100" cy="100" r="3" fill="#00ffc3"/>
+    <circle cx="700" cy="100" r="3" fill="#00ffc3"/>
+    <circle cx="100" cy="700" r="3" fill="#00ffc3"/>
+    <circle cx="700" cy="700" r="3" fill="#00ffc3"/>
+    <circle cx="400" cy="400" r="4" fill="#00ffc3"/>
+
+    <!-- Diagonal lines -->
+    <path d="M0 0L800 800"/>
+    <path d="M800 0L0 800"/>
+  </g>
+</svg>

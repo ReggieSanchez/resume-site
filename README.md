@@ -1,47 +1,124 @@
-# 🌩️ Cloud Resume Project – Reggie Sanchez
+# 🌐 Cloud Resume Project – Reggie Sanchez
 
-🚀 A live, cloud-hosted resume built on AWS using **S3**, **CloudFront**, and **Route 53** — deployed with **Terraform** and secured with HTTPS. This project serves as both my resume and a showcase of practical cloud and DevOps skills.
+[![Live Website](https://img.shields.io/badge/Live%20Site-View%20Resume-39FF14?style=for-the-badge&logo=amazon-aws&logoColor=black)](https://resume.whoisreggiesanchez.com)
 
-🔗 **Live Site**: [resume.whoisreggiesanchez.com](https://resume.whoisreggiesanchez.com)  
-📄 **Download Resume**: [resume.pdf](resume.pdf)
+🚀 **Overview**
 
----
+This project showcases a fully serverless, cloud-hosted resume built on AWS with modern DevOps practices:
 
-## 🧠 Why I Built This
-
-I wanted to challenge myself and create something that goes beyond the typical resume — something **cloud-native**, **production-grade**, and **developer-forward**. This project allowed me to demonstrate real-world skills like infrastructure as code, cloud automation, and polished front-end delivery — all backed by AWS.
-
----
-
-## 🛠️ Technologies Used
-
-| Category     | Tools / Services                                                                 |
-|--------------|----------------------------------------------------------------------------------|
-| Frontend     | HTML, CSS, Responsive Design, Rotating Dark Mode Themes, favicon                |
-| Cloud        | AWS S3, CloudFront, Route 53, ACM, Lambda, DynamoDB                              |
-| IaC          | Terraform                                                                        |
-| Deployment   | AWS CLI, GitHub                                                                 |
-| Extras       | Custom Domain, Downloadable Resume, QR Code, Visitor Counter                   |
+- **Infrastructure as Code:** Terraform provisions and manages all resources.
+- **CI/CD Pipeline:** GitHub Actions automatically deploys updates to S3 and CloudFront.
+- **Dynamic Features:**
+  - Visitor counter using Lambda + API Gateway + DynamoDB
+  - Dark mode with rotating themes
+  - Custom circuit board SVG background
+  - Downloadable PDF resume
+  - Verified GitHub and LinkedIn links
+- **Custom Domain:** `resume.whoisreggiesanchez.com` served via CloudFront CDN.
+- **Security:** CSP headers and HTTPS enforced.
 
 ---
 
-## 📦 Features
+## 🛠️ **Tech Stack**
 
-- ⚡ **Fully static website** hosted on S3
-- 🔐 **HTTPS enforced** via CloudFront + ACM
-- 🌐 **Custom domain** with Route 53
-- 🧱 **Infrastructure provisioned with Terraform**
-- 💾 **Version-controlled using Git + GitHub**
-- 📱 **Mobile-responsive layout** with anchored buttons
-- 📄 **Resume download** button
-- 📱 **QR code** for physical resume access
-- 🌗 **Rotating dark mode themes** (Matrix, Vaporwave, Tron, Inferno, etc.)
-- 👀 **Visitor counter** powered by Lambda + DynamoDB
-- 🚀 **CloudFront cache invalidation** for fast updates
+| Category              | Service / Tool                       |
+|-----------------------|--------------------------------------|
+| Infrastructure        | Terraform                            |
+| Cloud Provider        | AWS                                  |
+| Storage               | S3 Static Website Hosting            |
+| CDN & HTTPS           | CloudFront + ACM                     |
+| Serverless Functions  | Lambda (Visitor Counter)             |
+| API Gateway           | REST API for Lambda Invocation       |
+| Database              | DynamoDB (Visit Tracking)            |
+| Notifications         | SNS/SQS (Planned)                    |
+| CI/CD                 | GitHub Actions                       |
+| Frontend              | HTML, CSS, JavaScript                |
+| Design                | Font Awesome Icons, Custom CSS       |
+| Domain Registrar      | Namecheap / Route53                  |
 
 ---
 
-## 📬 Contact Me
+## ✨ **Features**
 
-- [LinkedIn](https://www.linkedin.com/in/whoisreggiesanchez)
-- [GitHub](https://github.com/whoisreggiesanchez)
+✅ **Serverless Visitor Counter**
+
+Every page load increments a DynamoDB counter via Lambda triggered by API Gateway.
+
+✅ **Dark Mode with Multiple Themes**
+
+Click the toggle to switch between 5 neon-inspired color palettes.
+
+✅ **Downloadable Resume**
+
+Hosted PDF for recruiters to download instantly.
+
+✅ **Verified Links**
+
+GitHub & LinkedIn profiles with hover effects and accessibility labels.
+
+✅ **Custom Background**
+
+SVG circuit board overlay with smooth fade between light and dark mode.
+
+✅ **Infrastructure as Code**
+
+Terraform scripts manage:
+- S3 bucket policies
+- CloudFront distribution
+- IAM roles
+- Lambda deployment
+
+✅ **CI/CD Pipeline**
+
+GitHub Actions:
+- Runs on `push` to `main`
+- Syncs files to S3
+- Invalidates CloudFront cache for near-instant updates
+
+✅ **Security Headers**
+
+Enforced Content Security Policy (CSP), HSTS, and other best practices.
+
+---
+
+## 🏗️ **Infrastructure Overview**
+
+This project uses the following AWS resources:
+
+- **S3 Bucket:** Hosts the static site
+- **CloudFront Distribution:** Serves content securely over HTTPS
+- **Lambda Function:** Counts visits and returns totals
+- **API Gateway:** Public endpoint to trigger Lambda
+- **DynamoDB Table:** Stores visitor counts
+- **IAM Roles:** Securely grant least-privilege access
+- **SES:** Planned for download notifications
+
+---
+
+## 🚀 **Deploy**
+
+**All infrastructure is deployed via Terraform.**
+Updates are pushed automatically via GitHub Actions.
+
+---
+
+## 📄 **Live Demo**
+
+[🔗 Visit the live site](https://resume.whoisreggiesanchez.com)
+
+---
+
+## 💡 **Purpose**
+
+This project demonstrates end-to-end cloud engineering skills, infrastructure as code, and modern web development.
+
+---
+
+## 🏆 **Next Steps**
+
+- SNS/SQS email notifications
+- Publish Terraform modules
+- Enhance performance and accessibility further
+
+---
+
